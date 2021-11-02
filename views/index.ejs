@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Weather</title>
+  <link rel="stylesheet" href="/css/style.css">
+ </head>
+ <body>
+      <div class="canvas-video" >
+          <video muted autoplay loop id="video">
+            <source src="clouds.mp4" type="video/mp4">
+       </div>
+    <div class="title">
+        <h1>Find the weather in your city</h1>
+    </div>
+        <div class="container">
+          <header>
+            <img src="/public/weath.jpg" alt=""/>
+          </header> 
+
+    <div class="weather-title">
+        <h1>Simply Weather</h1>
+        <p>View the current weather for your city</p>
+    </div>
+        <form action="/" method="POST">
+            <input type="text" name="city" class="ghost-input"
+             placeholder="Enter a city">
+        </form>
+    <div class="result">
+        <% if(temp !== null) {%>
+            <h1 class="temp"><%= temp %></h1>
+        <% } %>    
+   
+        <div class="icon-des">
+            <% if(icon !== null)  {%>
+              <img class="icon" src="http://openweathermap.org/img/w/<%= icon %>.png" alt="">
+            <% } %>
+            <% if(des !== null)  {%>
+              <h3><%= des %></h3>
+            <% } %>
+          </div>
+        
+        <% if(city !== null) {%>
+            <p class="city"><%= city %></p>
+            <% } %>
+    </div>
+      </div>
+        </div>
+        <body>
+            <footer>
+                <h2>"Wherever you go, no matter what the weather, always bring your own sunshine"</h2>
+            </footer>
+</html>
